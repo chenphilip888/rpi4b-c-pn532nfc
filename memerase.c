@@ -153,7 +153,7 @@ void loop(void) {
         int capacity = data[2] * 8;
         printf("Tag capacity %d bytes\n", capacity);
 
-        memcpy(data, (const uint8_t[]){ 0, 0, 0 }, sizeof data);
+        memcpy(data, (const uint8_t[]){ 0, 0, 0, 0 }, sizeof data);
         for (int i=4; i<capacity/4; i++) {
             mifareultralight_WritePage (i, data);
         }
