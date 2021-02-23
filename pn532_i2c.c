@@ -7,14 +7,18 @@
 
 void i2c_write( unsigned char *dout, int len )
 {
+    usleep( 100 );
     ioctl( fd, I2C_SLAVE, 0x24 );
     write( fd, dout, len );
+    usleep( 100 );
 }
 
 void i2c_read( unsigned char *dout, int len )
 {
+    usleep( 100 );
     ioctl( fd, I2C_SLAVE, 0x24 );
     read( fd, dout, len );
+    usleep( 100 );
 }
 
 void begin()
